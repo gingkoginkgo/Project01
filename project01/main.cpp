@@ -7,7 +7,7 @@ int main()
     cout << "Hello World!" << endl;
     UI ui;
     ui.getUserInput();
-
+    cout << "YOOOOOOOOOOOOO!" << endl;
     system("pause");
     return 0;
 }
