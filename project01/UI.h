@@ -17,6 +17,7 @@ class UI
     int ShowMenu(int);
     void ByeWMS(int);
     void Back(int);
+    int CheckInput(string);
 };
 
 #endif // UI_H
