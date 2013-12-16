@@ -1,36 +1,72 @@
-#include <iostream>
+
 #include "UI.h"
 using namespace std;
 
-UI::UI(){
-    int _MenuState = 0;
-
-}
-void UI::getUserInput()
-    {
-    cout<<"Plz Input _UserInput:"<<endl;
-    cin>>_UserInput;
-    cout<<"Here is:"<<_UserInput<<endl;
-    cout<<"Plz Input _MenuState:"<<endl;
-    cin>>_MenuState;
-    ShowMenu(_MenuState);
-    CheckInput(_UserInput);
-    ShowMenu(_MenuState);
-    //checkinput here
-    }
-int UI::ShowMenu(int _MenuState)
-{cout<<"ShowMenu:"<<_MenuState<<endl;return 0;}
-void UI::ByeWMS(int _MenuState)
-{cout<<"ByeWMS"<<endl;}
-void UI::Back(int _MenuState)
-{cout<<"Back"<<endl;}
-int UI::CheckInput(string _UserInput)
+UI::UI()
 {
-if(_UserInput=="a")
-{cout<<"don't input:"<<_UserInput<<endl;
-  _MenuState = 5566;
-  return _MenuState;
+    int _MenuState = 0;
 }
-else
-{cout<<"nothing"<<endl;}
+
+void UI::GetUserInput()
+{
 }
+
+void UI::GetUserSelection(int selNum)
+{
+    int sel=0;
+    for(;;)
+    {
+        cin >> sel;
+
+        if (sel < 1 || sel > selNum)
+        {
+            cout << "selection error\n plesese select again:";
+            ShowMenu();
+        }
+        else
+        {
+            _MenuState = _MenuState * 10 + sel;
+            break;
+        }
+    }
+}
+
+void UI::ShowMenu()
+{
+    switch(_MenuState)
+    {
+        case 0:
+            cout << menu0;
+            GetUserSelection(4);
+            break;
+        case 1:
+            cout << menu0_1;
+    }
+}
+
+void UI::ByeWMS()
+{
+    cout<<"ByeWMS"<<endl;
+    exit(0);
+}
+
+void UI::Back()
+{
+    _MenuState/=10;
+    ShowMenu();
+}
+void UI::CheckInput()
+{
+    if(_UserInput=="a")
+    {
+        cout<<"don't input:"<<_UserInput<<endl;
+        _MenuState = 5566;
+    }
+    else
+    {
+        cout<<"nothing"<<endl;
+    }
+}
+
+
+
