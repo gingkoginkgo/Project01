@@ -1,3 +1,4 @@
+// last update:2013/12/20
 
 #include "UI.h"
 using namespace std;
@@ -11,6 +12,7 @@ void UI::GetUserInput()
 {
 }
 
+//Get User Select & Check user input is correct or not
 void UI::GetUserSelection(int selNum)
 {
     int sel=0;
@@ -31,7 +33,7 @@ void UI::GetUserSelection(int selNum)
     }
 }
 
-void UI::ShowMenu()
+void UI::ShowMenu()      //Not finish
 {
     switch(_MenuState)
     {
@@ -41,6 +43,16 @@ void UI::ShowMenu()
             break;
         case 1:
             cout << menu0_1;
+            GetUserSelection(5);
+            break;
+        case 11:
+            cout << menu0_1_1;
+            GetUserSelection(3);
+            break;
+        case 12:
+            cout << menu0_1_2;
+            GetUserSelection(3);
+            break;
     }
 }
 
@@ -56,6 +68,7 @@ void UI::Back()
     ShowMenu();
 }
 void UI::CheckInput()
+// TODO: implement the exceptionhandling
 {
     if(_UserInput=="a")
     {
