@@ -6,7 +6,7 @@ int main()
 {
     cout << "Hello World!" << endl;
     UI ui;
-    ui.GetUserInput();
+    ui.ShowMenu();
     cout << "YOOOOOOOOOOOOO!" << endl;
     system("pause");
     return 0;

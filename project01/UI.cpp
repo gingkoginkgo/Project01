@@ -5,7 +5,7 @@ using namespace std;
 
 UI::UI()
 {
-    int _MenuState = 0;
+    this->_MenuState = 0;
 }
 
 void UI::GetUserInput()
@@ -20,15 +20,26 @@ void UI::GetUserSelection(int selNum)
     {
         cin >> sel;
 
+        //selection error check
         if (sel < 1 || sel > selNum)
         {
             cout << "selection error\n plesese select again:";
             ShowMenu();
         }
-        else
+        else //according to the different menu,deciding the action
         {
-            _MenuState = _MenuState * 10 + sel;
-            break;
+            switch(_MenuState)
+            {
+                case 0:
+
+
+
+
+                default: //To next menu
+                _MenuState = _MenuState * 10 + sel;
+                ShowMenu();
+                break;
+            }
         }
     }
 }
