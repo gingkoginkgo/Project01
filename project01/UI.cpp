@@ -28,15 +28,19 @@ void UI::GetUserSelection(int selNum)
         }
         else //according to the different menu,deciding the action
         {
+            _MenuState = _MenuState * 10 + sel;
             switch(_MenuState)
             {
-                case 0:
-
-
-
-
-                default: //To next menu
-                _MenuState = _MenuState * 10 + sel;
+                //_MenuState=0,[4]exit
+                case 4:
+                ByeWMS();
+                break;
+                //_MenuState=15,[5]back
+                case 15:
+                Back();
+                break;
+                //To next menu
+                default:
                 ShowMenu();
                 break;
             }
@@ -79,7 +83,7 @@ void UI::Back()
     ShowMenu();
 }
 void UI::CheckInput()
-// TODO: implement the exceptionhandling
+// TODO: implement the ExceptionHandling
 {
     if(_UserInput=="a")
     {
