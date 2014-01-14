@@ -1,4 +1,4 @@
-// last update:2013/12/20
+// last update:2014/01/14,not finish
 
 #include "UI.h"
 using namespace std;
@@ -48,6 +48,12 @@ void UI::GetUserSelection(int selNum)
     }
 }
 
+ /*Not finish
+  *To-DO & Problem:how handle cout about something
+  *like "Please enter the file name and path" or "[Error] File already exists"
+  *in the menu0_1_2_1 ?
+  */
+
 void UI::ShowMenu()      //Not finish
 {
     switch(_MenuState)
@@ -82,8 +88,9 @@ void UI::Back()
     _MenuState/=10;
     ShowMenu();
 }
-void UI::CheckInput()
+
 // TODO: implement the ExceptionHandling
+void UI::CheckInput()
 {
     if(_UserInput=="a")
     {
