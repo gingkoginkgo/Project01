@@ -4,8 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    UI.cpp
+    UI.cpp \
+    WMSFile.cpp
 
 HEADERS += \
-    UI.h
+    UI.h \
+    WMSFile.h
 
