@@ -49,7 +49,7 @@ void UI::GetUserSelection(int selNum)
     }
 }
 
-void UI::ShowMenu()      //Not finish
+void UI::ShowMenu()
 {
     switch(_MenuState)
     {
