@@ -1,6 +1,6 @@
 #ifndef WMSFILE_H
 #define WMSFILE_H
-
+#include <stdio.h>
 using namespace std;
 /*To-Do:
  * 01.Can get user input file path
@@ -18,8 +18,14 @@ using namespace std;
 
 class WMSFile
 {
-
-
+    public:
+    string _UserInputPath;
+    WMSFile();
+    void GetUserInputPath();
+    void CreateFile();
+    void LoadFile();
+    void WriteFile();
+    void PrintFile();
 
 };
 
