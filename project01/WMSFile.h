@@ -1,6 +1,6 @@
 #ifndef WMSFILE_H
 #define WMSFILE_H
-#include <stdio.h>
+#include <fstream>
 using namespace std;
 /*To-Do:
  * 01.Can get user input file path
